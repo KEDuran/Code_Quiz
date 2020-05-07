@@ -21,6 +21,85 @@
 
 	<!-- Start body here -->
 	<body>
+		<nav class="navbar navbar-dark bg-primary">
+			<a class="navbar-brand" href="#">View Highscores</a>
+			<div class="col-md-1">
+				<input type="text" class="form-control" placeholder=" Time Here" />
+			</div>
+		</nav>
+
+		<div class="container">
+			<!-- Start spacer row -->
+			<div class="row mt-5"></div>
+			<!-- End spacer row -->
+
+			<!-- Start row for question & answers -->
+			<div class="row">
+				<!-- column 1 -->
+				<div class="col-md-3"></div>
+				<!-- column 2-->
+				<div class="col-md-6">
+					<!-- row 1 - For questions  -->
+					<div class="row" id="question">
+						<h4>
+							Here is where the first quiz question will go. Will update when I
+							have the questions.
+						</h4>
+					</div>
+					<!-- row 2- For answers -->
+					<div class="row" id="answers">
+						<ul>
+							<!-- answer choice A -->
+							<li>
+								<input
+									class="btn btn-primary mb-3 mt-3"
+									type="text"
+									value="answer choice A "
+								/>
+							</li>
+							<!-- answer choice B -->
+							<li>
+								<input
+									class="btn btn-primary mb-3"
+									type="text"
+									value="answer choice B"
+								/>
+							</li>
+							<!-- answer choice C -->
+							<li>
+								<input
+									class="btn btn-primary mb-3"
+									type="text"
+									value="answer choice C"
+								/>
+							</li>
+							<!-- answer choice D -->
+							<li>
+								<input
+									class="btn btn-primary mb-3"
+									type="text"
+									value="answer choice D"
+								/>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+			<!-- End row for question & answers -->
+
+			<div class="row">
+				<div class="col-md-3"></div>
+				<div class="col-md-6">
+					<div class="alert alert-success" role="alert">
+						<h5 class="alert-heading">Correct!</h5>
+					</div>
+				</div>
+				<div class="col-md-3"></div>
+			</div>
+		</div>
+
+		<!-- Start links for JS script here -->
 		<script
 			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -37,6 +116,7 @@
 			crossorigin="anonymous"
 		></script>
 		<script src="Assets/JavaScript/script.js"></script>
+		<!-- End links for JS script here -->
 	</body>
-	<!-- End Body -->
+	<!-- End Body here -->
 </html>
