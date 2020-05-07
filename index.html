@@ -33,12 +33,13 @@
 			<div class="row mt-5"></div>
 			<!-- End spacer row -->
 
-			<!-- Start row for question & answers -->
+			<!-- Start of main content row -->
 			<div class="row">
 				<!-- column 1 -->
 				<div class="col-md-3"></div>
 				<!-- column 2-->
 				<div class="col-md-6">
+					<!-- intro div -->
 					<div id="intro" class="mt-4 mb-4">
 						<h3>Code Quiz Challenge</h3>
 						<p>
@@ -54,6 +55,7 @@
 							Start Quiz
 						</button>
 					</div>
+					<!-- quiz content div(Q&A) -->
 					<div id="quizcontent">
 						<!-- row 1 for question -->
 						<div class="row" id="question">
@@ -106,6 +108,52 @@
 							</div>
 						</div>
 					</div>
+					<!-- enter score for this quiz attempt -->
+					<div id="quizscore" class="mt-4 mb-4">
+						<h4>Thank you for completing the quiz!</h4>
+						<!-- score will be auto populated here -->
+						<form class="form-inline">
+							<div class="form-group mb-2">
+								<input
+									type="text"
+									readonly
+									class="form-control-plaintext"
+									value="Your final score is:"
+								/>
+							</div>
+							<div class="form-group mx-sm-3 mb-2">
+								<input
+									type="text"
+									class="form-control"
+									placeholder="auto populate here"
+								/>
+							</div>
+						</form>
+						<!-- initials entered here -->
+						<form class="form-inline">
+							<div class="form-group mb-2">
+								<input
+									type="text"
+									readonly
+									class="form-control-plaintext"
+									value="Enter your initials here:"
+								/>
+							</div>
+							<div class="form-group mx-sm-3 mb-2">
+								<input
+									type="text"
+									class="form-control"
+									placeholder="initials entered here"
+								/>
+							</div>
+						</form>
+						<!-- submission button here -->
+						<button type="submit" class="btn btn-primary mb-2">
+							Submit
+						</button>
+					</div>
+					<!-- score history stored here -->
+					<!-- PICK UP HERE - Add Score History Page -->
 				</div>
 				<div class="col-md-3"></div>
 			</div>
