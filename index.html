@@ -21,18 +21,25 @@
 
 	<!-- Start body here -->
 	<body>
+		<!-- start nav here -->
 		<nav class="navbar navbar-dark bg-primary">
-			<a class="navbar-brand" href="#">View Highscores</a>
+			<a id="scorelink" class="navbar-brand" href="#">View Highscores</a>
 			<div class="col-md-1">
-				<input type="text" class="form-control" placeholder=" Time Here" />
+				<input
+					id="timer"
+					type="text"
+					class="form-control"
+					placeholder=" Time Here"
+				/>
 			</div>
 		</nav>
+		<!-- end nav here -->
 
+		<!-- Start main container div -->
 		<div class="container">
 			<!-- Start spacer row -->
 			<div class="row mt-5"></div>
 			<!-- End spacer row -->
-
 			<!-- Start of main content row -->
 			<div class="row">
 				<!-- column 1 -->
@@ -51,7 +58,7 @@
 						<p>
 							Good Luck!!! You got this :)
 						</p>
-						<button type="button" class="btn btn-primary">
+						<button id="startquiz" type="button" class="btn btn-primary">
 							Start Quiz
 						</button>
 					</div>
@@ -123,6 +130,7 @@
 							</div>
 							<div class="form-group mx-sm-3 mb-2">
 								<input
+									id="finalscore"
 									type="text"
 									class="form-control"
 									placeholder="auto populate here"
@@ -141,6 +149,7 @@
 							</div>
 							<div class="form-group mx-sm-3 mb-2">
 								<input
+									id="initials"
 									type="text"
 									class="form-control"
 									placeholder="initials entered here"
@@ -148,22 +157,26 @@
 							</div>
 						</form>
 						<!-- submission button here -->
-						<button type="submit" class="btn btn-primary mb-2">
+						<button id="submitscore" type="submit" class="btn btn-primary mb-2">
 							Submit
 						</button>
 					</div>
-					<!-- score history stored here -->
+					<!-- score history div-->
 					<div id="scorehistory" class="mt4 mb-4">
 						<h4>Highscores</h4>
-						<ol class="list-group">
+						<ol id="scorelist" class="list-group">
 							<li class="list-group-item list-group-item-primary">
 								Highscores recorded here
 							</li>
 						</ol>
-						<button type="submit" class="btn btn-primary mb-2 mt-3">
+						<button id="goBack" type="submit" class="btn btn-primary mb-2 mt-3">
 							Go Back
 						</button>
-						<button type="submit" class="btn btn-primary mb-2 mt-3">
+						<button
+							id="clearHistory"
+							type="submit"
+							class="btn btn-primary mb-2 mt-3"
+						>
 							Clear History
 						</button>
 					</div>
@@ -171,8 +184,9 @@
 				<!-- column 3 -->
 				<div class="col-md-3"></div>
 			</div>
+			<!-- End of main content row -->
 		</div>
-		<!-- End of main content row -->
+		<!-- Start main container div -->
 
 		<!-- Start links for JS script here -->
 		<script
