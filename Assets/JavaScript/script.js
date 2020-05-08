@@ -1,12 +1,15 @@
-// Enter JavaScript code here when ready. This is leveraged code from last homework assignment.
-
-var lowercase = "abcdefghijklmnopqrstuvwxyz";
-
-// Here I declared the uppercase variable.
-var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-// Here I declared the numeric variable.
-var numeric = "0123456789";
-
-// Here I declared the special character variable.
-var specialcharacter = "!#$%&'()*+,-./:;<=>?@[]^_`{|}~";
+// Here are the global variables that will be used for the code quiz logic established below.
+var timerNav = document.querySelector("#timer");
+var scoreLinkNav = document.querySelector("#scoreLink");
+var introDiv = document.querySelector("#intro");
+var startQuizbtn = document.getElementById("startQuizbtn");
+var questionDiv = document.querySelector("#question");
+var answersDiv = document.querySelector("#answers");
+var alertDiv = document.querySelector("#alert");
+var quizscoreDiv = document.querySelector("#quizscore");
+var finalscoreAuto = document.querySelector("#finalscore");
+var initialsInput = socument.getElementById("initials");
+var submitScorebtn = document.getElementById("submitBtn");
+var finalScoreslist = document.querySelector("scoreList");
+var goBackbtn = document.querySelector("goBack");
+var clearHistorybtn = document.querySelector("clearHistory");

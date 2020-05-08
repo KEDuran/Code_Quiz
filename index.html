@@ -21,8 +21,9 @@
 
 	<!-- Start body here -->
 	<body>
+		<!-- start nav here -->
 		<nav class="navbar navbar-dark bg-primary">
-			<a class="navbar-brand" href="#">View Highscores</a>
+			<a id="scoreLink" class="navbar-brand" href="#">View Highscores</a>
 			<div class="col-md-1">
 				<input
 					id="timer"
@@ -32,7 +33,9 @@
 				/>
 			</div>
 		</nav>
+		<!-- end nav here -->
 
+		<!-- Start main container div -->
 		<div class="container">
 			<!-- Start spacer row -->
 			<div class="row mt-5"></div>
@@ -56,7 +59,7 @@
 						<p>
 							Good Luck!!! You got this :)
 						</p>
-						<button type="button" class="btn btn-primary">
+						<button id="startQuizbtn" type="button" class="btn btn-primary">
 							Start Quiz
 						</button>
 					</div>
@@ -128,6 +131,7 @@
 							</div>
 							<div class="form-group mx-sm-3 mb-2">
 								<input
+									id="finalscore"
 									type="text"
 									class="form-control"
 									placeholder="auto populate here"
@@ -146,6 +150,7 @@
 							</div>
 							<div class="form-group mx-sm-3 mb-2">
 								<input
+									id="initials"
 									type="text"
 									class="form-control"
 									placeholder="initials entered here"
@@ -153,22 +158,30 @@
 							</div>
 						</form>
 						<!-- submission button here -->
-						<button type="submit" class="btn btn-primary mb-2">
+						<button
+							id="submitButton"
+							type="submit"
+							class="btn btn-primary mb-2"
+						>
 							Submit
 						</button>
 					</div>
 					<!-- score history stored here -->
 					<div id="scorehistory" class="mt4 mb-4">
 						<h4>Highscores</h4>
-						<ol class="list-group">
+						<ol id="scoreList" class="list-group">
 							<li class="list-group-item list-group-item-primary">
 								Highscores recorded here
 							</li>
 						</ol>
-						<button type="submit" class="btn btn-primary mb-2 mt-3">
+						<button id="goBack" type="submit" class="btn btn-primary mb-2 mt-3">
 							Go Back
 						</button>
-						<button type="submit" class="btn btn-primary mb-2 mt-3">
+						<button
+							id="clearHistory"
+							type="submit"
+							class="btn btn-primary mb-2 mt-3"
+						>
 							Clear History
 						</button>
 					</div>
@@ -176,8 +189,9 @@
 				<!-- column 3 -->
 				<div class="col-md-3"></div>
 			</div>
+			<!-- End of main content row -->
 		</div>
-		<!-- End of main content row -->
+		<!-- Start main container div -->
 
 		<!-- Start links for JS script here -->
 		<script
