@@ -9,7 +9,7 @@ var answersDiv = document.querySelector("#answers");
 var alertDiv = document.querySelector("#alert");
 var quizscoreDiv = document.querySelector("#quizscore");
 var finalscoreAuto = document.querySelector("#finalscore");
-var initialsInput = socument.getElementById("initials");
+var initialsInput = document.getElementById("initials");
 var submitScorebtn = document.getElementById("submitscore");
 var scoreHistoryDiv = document.querySelector("#scorehistory");
 var finalScorelist = document.querySelector("#scorelist");
@@ -50,3 +50,19 @@ var codeQuestions = [
 		"B. onclick",
 	],
 ];
+
+var secondsLeft = 75;
+
+function countDown() {
+	var timerInterval = setInterval(function () {
+		timerNav.textContent = secondsLeft;
+		secondsLeft = secondsLeft - 1;
+
+		if (secondsLeft === 0) {
+			timerNav.textContent = secondsLeft;
+			clearInterval(timerInterval);
+		}
+	}, 1000);
+}
+
+countDown();
