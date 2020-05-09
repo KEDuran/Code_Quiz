@@ -65,4 +65,4 @@ function countDown() {
 	}, 1000);
 }
 
-countDown();
+startQuizbtn.addEventListener("click", timer);
