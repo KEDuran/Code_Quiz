@@ -60,10 +60,10 @@ var codeQuestions = [
 
 function loadQuestion(index) {
 	questionDiv.innerHTML = codeQuestions[index][0];
-	answerA.innerHTML = codeQuestions[index][1];
-	answerB.innerHTML = codeQuestions[index][2];
-	answerC.innerHTML = codeQuestions[index][3];
-	answerD.innerHTML = codeQuestions[index][4];
+	answerA.value = codeQuestions[index][1];
+	answerB.value = codeQuestions[index][2];
+	answerC.value = codeQuestions[index][3];
+	answerD.value = codeQuestions[index][4];
 }
 
 function answerSelection(index) {
