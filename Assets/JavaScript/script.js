@@ -79,6 +79,7 @@ function answerSelection(index) {
 		selected = answerD;
 	}
 	// alert needs to pop-up
+	alertDiv.classList.toggle("collapse");
 	if (selected.innerHTML === codeQuestions[i][5]) {
 		alertDiv.innerHTML = "Correct!";
 	} else {
@@ -109,3 +110,16 @@ function startQuiz() {
 }
 
 startQuizbtn.addEventListener("click", startQuiz);
+
+answerA.addEventListener("click", function () {
+	answerSelection(1);
+});
+answerB.addEventListener("click", function () {
+	answerSelection(2);
+});
+answerC.addEventListener("click", function () {
+	answerSelection(3);
+});
+answerD.addEventListener("click", function () {
+	answerSelection(4);
+});
