@@ -6,6 +6,10 @@ var startQuizbtn = document.getElementById("start");
 var quizcontentDiv = document.querySelector("#quizcontent");
 var questionDiv = document.querySelector("#question");
 var answersDiv = document.querySelector("#answers");
+var answerA = document.querySelector("#choiceA");
+var answerB = document.querySelector("#choiceB");
+var answerC = document.querySelector("#choiceC");
+var answerD = document.querySelector("#choiceD");
 var alertDiv = document.querySelector("#alert");
 var quizscoreDiv = document.querySelector("#quizscore");
 var finalscoreAuto = document.querySelector("#finalscore");
@@ -15,6 +19,9 @@ var scoreHistoryDiv = document.querySelector("#scorehistory");
 var finalScorelist = document.querySelector("#scorelist");
 var goBackbtn = document.getElementById("goBack");
 var clearHistorybtn = document.getElementById("clearHistory");
+
+var i = 0;
+var secondsLeft = 75;
 
 var codeQuestions = [
 	[
@@ -51,7 +58,20 @@ var codeQuestions = [
 	],
 ];
 
-var secondsLeft = 75;
+function loadQuestion(index) {
+	questionDiv.innerHTML = codeQuestions[index][0];
+	answerA.innerHTML = codeQuestions[index][1];
+	answerB.innerHTML = codeQuestions[index][2];
+	answerC.innerHTML = codeQuestions[index][3];
+	answerD.innerHTML = codeQuestions[index][4];
+}
+
+function answerSelection(index) {
+	// answer choice
+	// alert needs to pop-up
+	// if answer choice is correct, decrement by 1 sec
+	// if answer choice is incorrect, decrement by 10sec
+}
 
 function startQuiz() {
 	var timerInterval = setInterval(function () {
@@ -67,6 +87,7 @@ function startQuiz() {
 	introDiv.classList.toggle("collapse");
 	quizcontentDiv.classList.toggle("collapse");
 	alertDiv.classList.toggle("collapse");
+	loadQuestion(i);
 }
 
 startQuizbtn.addEventListener("click", startQuiz);
