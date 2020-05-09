@@ -13,7 +13,7 @@ var answerD = document.querySelector("#answerD");
 var alertCorrect = document.querySelector("#alertCorrect");
 var alertWrong = document.querySelector("#alertWrong");
 var quizscoreDiv = document.querySelector("#quizscore");
-var finalscoreAuto = document.querySelector("#finalscore");
+var finalScore = document.querySelector("#finalScore");
 var initialsInput = document.getElementById("initials");
 var submitScorebtn = document.getElementById("submitscore");
 var scoreHistoryDiv = document.querySelector("#scorehistory");
@@ -103,6 +103,7 @@ function answerSelection(index) {
 		clearInterval(timerInterval);
 		quizcontentDiv.classList.toggle("collapse");
 		quizscoreDiv.classList.toggle("collapse");
+		finalScore.innerHTML = secondsLeft;
 	} else {
 		i = i + 1;
 		loadQuestion(i);
