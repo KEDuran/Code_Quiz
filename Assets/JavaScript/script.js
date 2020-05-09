@@ -24,6 +24,7 @@ var clearHistorybtn = document.getElementById("clearHistory");
 var i = 0;
 var secondsLeft = 75;
 var timerInterval = 0;
+var scores = [];
 
 var codeQuestions = [
 	[
@@ -68,8 +69,6 @@ function loadQuestion(index) {
 	answerD.value = codeQuestions[index][4];
 }
 
-function finalScore() {}
-
 function answerSelection(index) {
 	// answer choice
 	var selected = "";
@@ -112,6 +111,25 @@ function answerSelection(index) {
 	}
 }
 
+function listofscores() {
+	for (var i = 0; i < scores.length; i++) {
+		var li = document.createElement("li");
+		li.textContent = i + 1 + " - " + scores[i];
+		li.setAttribute("class", "list-group-item");
+		finalScorelist.appendChild(li);
+	}
+}
+
+function scoreHistory() {
+	var initials = initialsInput.value;
+	var scoreEntry = initials + " - " + secondsLeft;
+	scores.push(scoreEntry);
+	localStorage.setItem("scores", JSON.stringify(scores));
+	quizscoreDiv.classList.toggle("collapse");
+	scoreHistoryDiv.classList.toggle("collapse");
+	listofscores();
+}
+
 function startQuiz() {
 	timerInterval = setInterval(function () {
 		timerNav.innerHTML = secondsLeft;
@@ -142,3 +160,5 @@ answerC.addEventListener("click", function () {
 answerD.addEventListener("click", function () {
 	answerSelection(4);
 });
+
+submitScorebtn.addEventListener("click", scoreHistory);

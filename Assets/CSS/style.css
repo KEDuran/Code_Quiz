@@ -1,20 +1,5 @@
-/* Leveraging code from previous homework assignment */
+/* Enter CSS here is needed*/
 
-/* body selectors */
-* body {
-	width: 100%;
-}
-.main-bg {
-	background-color: rgb(233, 227, 227);
-}
-
-/* nav selectors */
-.purple {
-	background-color: rgb(104, 86, 139);
-}
-
-/* header selectors */
-h2 {
-	color: rgb(73, 69, 69);
-	font-style: initial;
+.backgroud {
+	background-color: aqua;
 }
