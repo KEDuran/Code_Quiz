@@ -35,11 +35,11 @@ var codeQuestions = [
 	],
 	[
 		"What is the correct syntax got referring to an external script called xxx.js?",
-		'A. <script src= "xxx.js>"',
+		'A. <script src= "xxx.js">',
 		'B. <link src= "xxx.js"',
 		'C. <a href "xxx.js"',
 		"D. None of the above",
-		'A. <script src= "xxx.js"',
+		'A. <script src= "xxx.js">',
 	],
 	[
 		"How can you add a single-line comment in JavaScript?",
@@ -66,6 +66,8 @@ function loadQuestion(index) {
 	answerC.value = codeQuestions[index][3];
 	answerD.value = codeQuestions[index][4];
 }
+
+function finalScore() {}
 
 function answerSelection(index) {
 	// answer choice
@@ -96,8 +98,13 @@ function answerSelection(index) {
 		clearInterval(alertTimer);
 	}, 500);
 
-	i = i + 1;
-	loadQuestion(i);
+	if (i === 3) {
+		quizcontentDiv.classList.toggle("collapse");
+		quizscoreDiv.classList.toggle("collapse");
+	} else {
+		i = i + 1;
+		loadQuestion(i);
+	}
 }
 
 function startQuiz() {
