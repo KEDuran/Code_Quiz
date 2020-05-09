@@ -92,6 +92,7 @@ function answerSelection(index) {
 		alertWrong.classList.toggle("collapse");
 		// if answer choice is incorrect, decrement by 10sec
 		secondsLeft = secondsLeft - 10;
+		timerNav.innerHTML = secondsLeft;
 	}
 
 	var alertTimer = setInterval(function () {
@@ -104,6 +105,7 @@ function answerSelection(index) {
 		quizcontentDiv.classList.toggle("collapse");
 		quizscoreDiv.classList.toggle("collapse");
 		finalScore.innerHTML = secondsLeft;
+		timerNav.innerHTML = secondsLeft;
 	} else {
 		i = i + 1;
 		loadQuestion(i);
@@ -112,11 +114,11 @@ function answerSelection(index) {
 
 function startQuiz() {
 	timerInterval = setInterval(function () {
-		timerNav.textContent = secondsLeft;
+		timerNav.innerHTML = secondsLeft;
 		secondsLeft = secondsLeft - 1;
 
 		if (secondsLeft === 0) {
-			timerNav.textContent = secondsLeft;
+			timerNav.innerHTML = secondsLeft;
 			clearInterval(timerInterval);
 		}
 	}, 1000);
