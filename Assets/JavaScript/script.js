@@ -6,10 +6,10 @@ var startQuizbtn = document.getElementById("start");
 var quizcontentDiv = document.querySelector("#quizcontent");
 var questionDiv = document.querySelector("#question");
 var answersDiv = document.querySelector("#answers");
-var answerA = document.querySelector("#choiceA");
-var answerB = document.querySelector("#choiceB");
-var answerC = document.querySelector("#choiceC");
-var answerD = document.querySelector("#choiceD");
+var answerA = document.querySelector("#answerA");
+var answerB = document.querySelector("#answerB");
+var answerC = document.querySelector("#answerC");
+var answerD = document.querySelector("#answerD");
 var alertDiv = document.querySelector("#alert");
 var quizscoreDiv = document.querySelector("#quizscore");
 var finalscoreAuto = document.querySelector("#finalscore");
@@ -68,9 +68,27 @@ function loadQuestion(index) {
 
 function answerSelection(index) {
 	// answer choice
+	var selected = "";
+	if (index === 1) {
+		selected = answerA;
+	} else if (index === 2) {
+		selected = answerB;
+	} else if (index === 3) {
+		selected = answerC;
+	} else {
+		selected = answerD;
+	}
 	// alert needs to pop-up
-	// if answer choice is correct, decrement by 1 sec
-	// if answer choice is incorrect, decrement by 10sec
+	if (selected.innerHTML === codeQuestions[i][5]) {
+		alertDiv.innerHTML = "Correct!";
+	} else {
+		alertDiv.innerHTML = "Wrong!";
+		// if answer choice is incorrect, decrement by 10sec
+		secondsLeft = secondsLeft - 10;
+	}
+
+	i = i + 1;
+	loadQuestion(i);
 }
 
 function startQuiz() {
