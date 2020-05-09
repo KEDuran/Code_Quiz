@@ -23,6 +23,7 @@ var clearHistorybtn = document.getElementById("clearHistory");
 
 var i = 0;
 var secondsLeft = 75;
+var timerInterval = 0;
 
 var codeQuestions = [
 	[
@@ -99,6 +100,7 @@ function answerSelection(index) {
 	}, 500);
 
 	if (i === 3) {
+		clearInterval(timerInterval);
 		quizcontentDiv.classList.toggle("collapse");
 		quizscoreDiv.classList.toggle("collapse");
 	} else {
@@ -108,7 +110,7 @@ function answerSelection(index) {
 }
 
 function startQuiz() {
-	var timerInterval = setInterval(function () {
+	timerInterval = setInterval(function () {
 		timerNav.textContent = secondsLeft;
 		secondsLeft = secondsLeft - 1;
 
