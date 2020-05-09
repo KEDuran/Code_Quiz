@@ -20,7 +20,7 @@ var finalScorelist = document.querySelector("#scorelist");
 var goBackbtn = document.getElementById("goBack");
 var clearHistorybtn = document.getElementById("clearHistory");
 
-var i = "";
+var i = 0;
 var secondsLeft = 75;
 
 var codeQuestions = [
@@ -66,7 +66,7 @@ function loadQuestion(index) {
 	answerD.innerHTML = codeQuestions[index][4];
 }
 
-function answerSelection() {
+function answerSelection(index) {
 	// answer choice
 	// alert needs to pop-up
 	// if answer choice is correct, decrement by 1 sec
@@ -87,6 +87,7 @@ function startQuiz() {
 	introDiv.classList.toggle("collapse");
 	quizcontentDiv.classList.toggle("collapse");
 	alertDiv.classList.toggle("collapse");
+	loadQuestion(i);
 }
 
 startQuizbtn.addEventListener("click", startQuiz);
