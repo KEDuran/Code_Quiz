@@ -10,7 +10,8 @@ var answerA = document.querySelector("#answerA");
 var answerB = document.querySelector("#answerB");
 var answerC = document.querySelector("#answerC");
 var answerD = document.querySelector("#answerD");
-var alertDiv = document.querySelector("#alert");
+var alertCorrect = document.querySelector("#alertCorrect");
+var alertWrong = document.querySelector("#alertWrong");
 var quizscoreDiv = document.querySelector("#quizscore");
 var finalscoreAuto = document.querySelector("#finalscore");
 var initialsInput = document.getElementById("initials");
@@ -79,11 +80,10 @@ function answerSelection(index) {
 		selected = answerD;
 	}
 	// alert needs to pop-up
-	alertDiv.classList.toggle("collapse");
 	if (selected.innerHTML === codeQuestions[i][5]) {
-		alertDiv.innerHTML = "Correct!";
+		alertCorrect.classList.toggle("collapse");
 	} else {
-		alertDiv.innerHTML = "Wrong!";
+		alertWrong.classList.toggle("collapse");
 		// if answer choice is incorrect, decrement by 10sec
 		secondsLeft = secondsLeft - 10;
 	}
