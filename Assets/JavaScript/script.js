@@ -35,7 +35,7 @@ var codeQuestions = [
 	],
 	[
 		"What is the correct syntax got referring to an external script called xxx.js?",
-		'A. <script src= "xxx.js"',
+		'A. <script src= "xxx.js>"',
 		'B. <link src= "xxx.js"',
 		'C. <a href "xxx.js"',
 		"D. None of the above",
@@ -80,13 +80,21 @@ function answerSelection(index) {
 		selected = answerD;
 	}
 	// alert needs to pop-up
-	if (selected.innerHTML === codeQuestions[i][5]) {
+	var alertMessage = "";
+	if (selected.value === codeQuestions[i][5]) {
+		alertMessage = alertCorrect;
 		alertCorrect.classList.toggle("collapse");
 	} else {
+		alertMessage = alertWrong;
 		alertWrong.classList.toggle("collapse");
 		// if answer choice is incorrect, decrement by 10sec
 		secondsLeft = secondsLeft - 10;
 	}
+
+	var alertTimer = setInterval(function () {
+		alertMessage.classList.toggle("collapse");
+		clearInterval(alertTimer);
+	}, 500);
 
 	i = i + 1;
 	loadQuestion(i);
@@ -105,7 +113,6 @@ function startQuiz() {
 
 	introDiv.classList.toggle("collapse");
 	quizcontentDiv.classList.toggle("collapse");
-	alertDiv.classList.toggle("collapse");
 	loadQuestion(i);
 }
 
