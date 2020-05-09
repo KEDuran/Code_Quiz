@@ -60,10 +60,10 @@ var codeQuestions = [
 
 function loadQuestion(index) {
 	questionDiv.innerHTML = codeQuestions[index][0];
-	answerA.innerHTML = codeQuestions[index][1];
-	answerB.innerHTML = codeQuestions[index][2];
-	answerC.innerHTML = codeQuestions[index][3];
-	answerD.innerHTML = codeQuestions[index][4];
+	answerA.value = codeQuestions[index][1];
+	answerB.value = codeQuestions[index][2];
+	answerC.value = codeQuestions[index][3];
+	answerD.value = codeQuestions[index][4];
 }
 
 function answerSelection(index) {
@@ -79,6 +79,7 @@ function answerSelection(index) {
 		selected = answerD;
 	}
 	// alert needs to pop-up
+	alertDiv.classList.toggle("collapse");
 	if (selected.innerHTML === codeQuestions[i][5]) {
 		alertDiv.innerHTML = "Correct!";
 	} else {
@@ -109,3 +110,16 @@ function startQuiz() {
 }
 
 startQuizbtn.addEventListener("click", startQuiz);
+
+answerA.addEventListener("click", function () {
+	answerSelection(1);
+});
+answerB.addEventListener("click", function () {
+	answerSelection(2);
+});
+answerC.addEventListener("click", function () {
+	answerSelection(3);
+});
+answerD.addEventListener("click", function () {
+	answerSelection(4);
+});
