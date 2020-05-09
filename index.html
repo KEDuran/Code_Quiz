@@ -24,7 +24,7 @@
 		<!-- start nav here -->
 		<nav class="navbar navbar-dark bg-primary">
 			<a id="scorelink" class="navbar-brand" href="#">View Highscores</a>
-			<div class="col-md-1 form-inline text-light">
+			<div class="col-md-2 form-inline text-light">
 				<div class="p-2 navbar-brand">Time:</div>
 				<div id="timer" class="navbar-brand">75</div>
 			</div>
@@ -59,7 +59,7 @@
 						</button>
 					</div>
 					<!-- quiz content div(Q&A) -->
-					<div id="quizcontent">
+					<div id="quizcontent" class="collapse">
 						<!-- row 1 for question -->
 						<div class="row" id="question">
 							<h4>
@@ -112,7 +112,7 @@
 						</div>
 					</div>
 					<!-- enter score div -->
-					<div id="quizscore" class="mt-4 mb-4">
+					<div id="quizscore" class="mt-4 mb-4 collapse">
 						<h4>Thank you for completing the quiz!</h4>
 						<!-- score will be auto populated here -->
 						<form class="form-inline">
@@ -158,7 +158,7 @@
 						</button>
 					</div>
 					<!-- score history div-->
-					<div id="scorehistory" class="mt4 mb-4">
+					<div id="scorehistory" class="mt4 mb-4 collapse">
 						<h4>Highscores</h4>
 						<ol id="scorelist" class="list-group">
 							<li class="list-group-item list-group-item-primary">
