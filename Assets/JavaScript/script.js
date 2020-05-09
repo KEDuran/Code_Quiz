@@ -24,7 +24,7 @@ var clearHistorybtn = document.getElementById("clearHistory");
 var i = 0;
 var secondsLeft = 75;
 var timerInterval = 0;
-
+var scores = [];
 var codeQuestions = [
 	[
 		"Where is the correct place to insert a JavaScript?",
