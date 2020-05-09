@@ -25,6 +25,7 @@ var i = 0;
 var secondsLeft = 75;
 var timerInterval = 0;
 var scores = [];
+
 var codeQuestions = [
 	[
 		"Where is the correct place to insert a JavaScript?",
@@ -112,6 +113,13 @@ function answerSelection(index) {
 	}
 }
 
+function scoreHistory() {
+	var initials = initialsInput.value;
+	var scoreEntry = initials + " - " + secondsLeft;
+	scores.push(scoreEntry);
+	localStorage.setItem("scores", JSON.stringify(scores));
+}
+
 function startQuiz() {
 	timerInterval = setInterval(function () {
 		timerNav.innerHTML = secondsLeft;
@@ -142,3 +150,5 @@ answerC.addEventListener("click", function () {
 answerD.addEventListener("click", function () {
 	answerSelection(4);
 });
+
+submitScorebtn.addEventListener("click", scoreHistory);
