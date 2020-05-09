@@ -114,7 +114,7 @@ function answerSelection(index) {
 function listofscores() {
 	for (var i = 0; i < scores.length; i++) {
 		var li = document.createElement("li");
-		li.textContent = scores[i];
+		li.textContent = i + 1 + " - " + scores[i];
 		li.setAttribute("class", "list-group-item");
 		finalScorelist.appendChild(li);
 	}
