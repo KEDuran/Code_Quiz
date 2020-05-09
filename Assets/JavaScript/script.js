@@ -79,7 +79,6 @@ function answerSelection(index) {
 		selected = answerD;
 	}
 	// alert needs to pop-up
-	alertDiv.classList.toggle("collapse");
 	if (selected.innerHTML === codeQuestions[i][5]) {
 		alertDiv.innerHTML = "Correct!";
 	} else {
