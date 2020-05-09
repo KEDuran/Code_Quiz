@@ -2,7 +2,7 @@
 var timerNav = document.querySelector("#timer");
 var scorelinkNav = document.querySelector("#scorelink");
 var introDiv = document.querySelector("#intro");
-var startQuizbtn = document.getElementById("startquiz");
+var startQuizbtn = document.getElementById("start");
 var quizcontentDiv = document.querySelector("#quizcontent");
 var questionDiv = document.querySelector("#question");
 var answersDiv = document.querySelector("#answers");
@@ -53,7 +53,7 @@ var codeQuestions = [
 
 var secondsLeft = 75;
 
-function countDown() {
+function startQuiz() {
 	var timerInterval = setInterval(function () {
 		timerNav.textContent = secondsLeft;
 		secondsLeft = secondsLeft - 1;
@@ -63,6 +63,10 @@ function countDown() {
 			clearInterval(timerInterval);
 		}
 	}, 1000);
+
+	introDiv.classList.toggle("collapse");
+	quizcontentDiv.classList.toggle("collapse");
+	alertDiv.classList.toggle("collapse");
 }
 
-countDown();
+startQuizbtn.addEventListener("click", startQuiz);
