@@ -13,7 +13,7 @@ var answerD = document.querySelector("#answerD");
 var alertCorrect = document.querySelector("#alertCorrect");
 var alertWrong = document.querySelector("#alertWrong");
 var quizscoreDiv = document.querySelector("#quizscore");
-var finalscoreAuto = document.querySelector("#finalscore");
+var finalScore = document.querySelector("#finalScore");
 var initialsInput = document.getElementById("initials");
 var submitScorebtn = document.getElementById("submitscore");
 var scoreHistoryDiv = document.querySelector("#scorehistory");
@@ -23,6 +23,7 @@ var clearHistorybtn = document.getElementById("clearHistory");
 
 var i = 0;
 var secondsLeft = 75;
+var timerInterval = 0;
 
 var codeQuestions = [
 	[
@@ -91,6 +92,7 @@ function answerSelection(index) {
 		alertWrong.classList.toggle("collapse");
 		// if answer choice is incorrect, decrement by 10sec
 		secondsLeft = secondsLeft - 10;
+		timerNav.innerHTML = secondsLeft;
 	}
 
 	var alertTimer = setInterval(function () {
@@ -99,8 +101,11 @@ function answerSelection(index) {
 	}, 500);
 
 	if (i === 3) {
+		clearInterval(timerInterval);
 		quizcontentDiv.classList.toggle("collapse");
 		quizscoreDiv.classList.toggle("collapse");
+		finalScore.innerHTML = secondsLeft;
+		timerNav.innerHTML = secondsLeft;
 	} else {
 		i = i + 1;
 		loadQuestion(i);
@@ -108,12 +113,12 @@ function answerSelection(index) {
 }
 
 function startQuiz() {
-	var timerInterval = setInterval(function () {
-		timerNav.textContent = secondsLeft;
+	timerInterval = setInterval(function () {
+		timerNav.innerHTML = secondsLeft;
 		secondsLeft = secondsLeft - 1;
 
 		if (secondsLeft === 0) {
-			timerNav.textContent = secondsLeft;
+			timerNav.innerHTML = secondsLeft;
 			clearInterval(timerInterval);
 		}
 	}, 1000);
