@@ -151,6 +151,11 @@ function goBack() {
 	introDiv.classList.toggle("collapse");
 }
 
+function clearHistory() {
+	scores = [];
+	localStorage.setItem("scores", JSON.stringify(scores));
+}
+
 startQuizbtn.addEventListener("click", startQuiz);
 
 answerA.addEventListener("click", function () {
@@ -169,3 +174,5 @@ answerD.addEventListener("click", function () {
 submitScorebtn.addEventListener("click", scoreHistory);
 
 goBackbtn.addEventListener("click", goBack);
+
+clearHistorybtn.addEventListener("click", clearHistory);
