@@ -138,6 +138,7 @@ function startQuiz() {
 	timerInterval = setInterval(function () {
 		timerNav.innerHTML = secondsLeft;
 		secondsLeft = secondsLeft - 1;
+		timerNav.innerHTML = secondsLeft;
 
 		if (secondsLeft === 0) {
 			timerNav.innerHTML = secondsLeft;
