@@ -70,7 +70,7 @@ var codeQuestions = [
 ];
 
 /* The retain() function is used to retain all saved scores even after the user refreshes the browser. I am invoking the function 
-here to it immediately executes after the browser is refreshed.*/
+here so it immediately executes after the browser is refreshed. The function's logic is defined below.*/
 retain();
 
 /* The loadQuestion() function is used to pull and populate each code quiz questions for the user. This function is invoked in the 
@@ -126,7 +126,8 @@ function answerSelection(index) {
 		loadQuestion(i);
 	}
 }
-
+/* The listofscores() function establishes the logic needed to create a new HTML list item within the HTML quiz score div based on the number
+of scores appended into the global scores array variable defined above.*/
 function listofscores() {
 	finalScorelist.innerHTML = "";
 	for (var i = 0; i < scores.length; i++) {
@@ -137,6 +138,9 @@ function listofscores() {
 	}
 }
 
+/* The scoreHistory() function locally stores the user's quiz scores that have been appended into the scores array, which then populates a list item
+within the HTML per appended score by invoking the listofscores() function. This function also collapses the main HTML quiz score div and uncollapses the score 
+history div so the user can see the score history div HTML element where their list of scores will be populated.*/
 function scoreHistory() {
 	var initials = initialsInput.value;
 	var scoreEntry = initials + " - " + secondsLeft;
@@ -148,6 +152,8 @@ function scoreHistory() {
 	listofscores();
 }
 
+/* The startQuiz() function establishes the logic of what needs to execute when the start quiz button is clicked. This function ensure the timer decrements by 
+1 second, collapses the intro div, uncollapses the main quiz content div where the questions populate, and then invokes the loadQuestion() function.*/
 function startQuiz() {
 	timerInterval = setInterval(function () {
 		timerNav.innerHTML = secondsLeft;
@@ -166,6 +172,9 @@ function startQuiz() {
 	loadQuestion(i);
 }
 
+/* The goBack() function establishes the logic of what needs to execute when the user clicks the go back button on the score history div. When the user
+clicks on the go back button, the following will occur: (a) score history div will collapse, (b) intro div will uncollapse, (c) timer will reset to 75 seconds, 
+and (d) i variables used t track questions will reset.*/
 function goBack() {
 	scoreHistoryDiv.classList.toggle("collapse");
 	introDiv.classList.toggle("collapse");
@@ -175,12 +184,17 @@ function goBack() {
 	i = 0;
 }
 
+/* The clearHistory() function will reset the scores array back to an empty value, which will then clear any scores listed within HTML listed items in the score
+history div once the listofscores() function is invoked.*/
 function clearHistory() {
 	scores = [];
 	localStorage.setItem("scores", JSON.stringify(scores));
 	listofscores();
 }
 
+/* The highScorelink() function establishes the logic of what needs to execute when the view highscores link in the top-left side of the nav is clicked. The following 
+behavior will occure: (a) any active div will collapse, (b) score history div will uncollapse, (c) questions and timer will reset to intital starting parameters, 
+and (d) listofscores () function is invoked and any scores appended into the scores array will show as HTML listed items. */
 function highScorelink() {
 	activeDiv.classList.toggle("collapse");
 	scoreHistoryDiv.classList.toggle("collapse");
@@ -191,12 +205,11 @@ function highScorelink() {
 	listofscores();
 }
 
+/* The retain() function is parsing out the user's quiz scores that are saved in local storage and assigning them back to the scores array, which ensures that the 
+saved quiz scores continue to populate on in the score history div even after the user refreshes the page. */
 function retain() {
-	// Get stored todos from localStorage
-	// Parsing the JSON string to an object
 	var storedScores = JSON.parse(localStorage.getItem("scores"));
 
-	// If todos were retrieved from localStorage, update the todos array to it
 	if (storedScores !== null) {
 		scores = storedScores;
 	}
