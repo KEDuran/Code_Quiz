@@ -146,6 +146,11 @@ function startQuiz() {
 	loadQuestion(i);
 }
 
+function goBack() {
+	scoreHistoryDiv.classList.toggle("collapse");
+	introDiv.classList.toggle("collapse");
+}
+
 startQuizbtn.addEventListener("click", startQuiz);
 
 answerA.addEventListener("click", function () {
