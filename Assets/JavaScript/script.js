@@ -112,6 +112,7 @@ function answerSelection(index) {
 }
 
 function listofscores() {
+	finalScorelist.innerHTML = "";
 	for (var i = 0; i < scores.length; i++) {
 		var li = document.createElement("li");
 		li.textContent = i + 1 + " - " + scores[i];
@@ -157,6 +158,7 @@ function goBack() {
 function clearHistory() {
 	scores = [];
 	localStorage.setItem("scores", JSON.stringify(scores));
+	listofscores();
 }
 
 startQuizbtn.addEventListener("click", startQuiz);
