@@ -168,10 +168,11 @@ function clearHistory() {
 
 function highScorelink() {
 	activeDiv.classList.toggle("collapse");
-	scoreHistoryDiv.classList.toogle("collapse");
+	scoreHistoryDiv.classList.toggle("collapse");
 	i = 0;
 	secondsLeft = 75;
 	timerNav.innerHTML = secondsLeft;
+	clearInterval(timerInterval);
 }
 
 startQuizbtn.addEventListener("click", startQuiz);
