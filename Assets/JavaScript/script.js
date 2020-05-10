@@ -1,4 +1,4 @@
-// Here are the global variables that will be used for the code quiz logic established below.
+// Here are all the declared global variables that call specific element tags in the index.html file based on the tag's associated id attribute.
 var timerNav = document.querySelector("#timer");
 var scorelinkNav = document.querySelector("#scorelink");
 var introDiv = document.querySelector("#intro");
@@ -21,12 +21,19 @@ var finalScorelist = document.querySelector("#scorelist");
 var goBackbtn = document.getElementById("goBack");
 var clearHistorybtn = document.getElementById("clearHistory");
 
+/*Here are all the declared global general variables that will be applied to the functions that follow throughout the code. 
+The value for each variable listed below will change with the functions listed throughout the code.*/
+// Var i keeps track of the current quiz question.
 var i = 0;
+// Var secondsLeft establishes a 75 second limit to complete the quiz.
 var secondsLeft = 75;
+// Var timerInterval is used to store the decrementing seconds of the timer.
 var timerInterval = 0;
+// Var scores declares a empty global array that will be used to append any save scores entere by the user.
 var scores = [];
+// Var activeDiv is used to keep track of current HTML div the user is accessing throughout each stage of the code quiz.
 var activeDiv = introDiv;
-
+// Var codeQuestions is a multi-dimensional array that stores the quiz questions and answers.
 var codeQuestions = [
 	[
 		"Where is the correct place to insert a JavaScript?",
