@@ -149,6 +149,9 @@ function startQuiz() {
 function goBack() {
 	scoreHistoryDiv.classList.toggle("collapse");
 	introDiv.classList.toggle("collapse");
+	secondsLeft = 75;
+	timerNav.innerHTML = secondsLeft;
+	i = 0;
 }
 
 function clearHistory() {
