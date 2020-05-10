@@ -69,8 +69,12 @@ var codeQuestions = [
 	],
 ];
 
+/* The retain() function is used to retain all saved scores even after the user refreshes the browser. I am invoking the function 
+here to it immediately executes after the browser is refreshed.*/
 retain();
 
+/* The loadQuestion() function is used to pull and populate each code quiz questions for the user. This function is invoked in the 
+answerSelection() function and startQuiz() function.*/
 function loadQuestion(index) {
 	questionDiv.innerHTML = codeQuestions[index][0];
 	answerA.value = codeQuestions[index][1];
