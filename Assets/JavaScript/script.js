@@ -5,7 +5,6 @@ var introDiv = document.querySelector("#intro");
 var startQuizbtn = document.getElementById("start");
 var quizcontentDiv = document.querySelector("#quizcontent");
 var questionDiv = document.querySelector("#question");
-var answersDiv = document.querySelector("#answers");
 var answerA = document.querySelector("#answerA");
 var answerB = document.querySelector("#answerB");
 var answerC = document.querySelector("#answerC");
