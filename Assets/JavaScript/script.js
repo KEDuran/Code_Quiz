@@ -151,6 +151,11 @@ function goBack() {
 	introDiv.classList.toggle("collapse");
 }
 
+function clearHistory() {
+	scores = [];
+	localStorage.setItem("scores", JSON.stringify(scores));
+}
+
 startQuizbtn.addEventListener("click", startQuiz);
 
 answerA.addEventListener("click", function () {
