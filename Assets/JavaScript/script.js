@@ -25,6 +25,7 @@ var i = 0;
 var secondsLeft = 75;
 var timerInterval = 0;
 var scores = [];
+var activeDiv = introDiv;
 
 var codeQuestions = [
 	[
@@ -103,6 +104,7 @@ function answerSelection(index) {
 		clearInterval(timerInterval);
 		quizcontentDiv.classList.toggle("collapse");
 		quizscoreDiv.classList.toggle("collapse");
+		activeDiv = quizscoreDiv;
 		finalScore.innerHTML = secondsLeft;
 		timerNav.innerHTML = secondsLeft;
 	} else {
@@ -128,6 +130,7 @@ function scoreHistory() {
 	localStorage.setItem("scores", JSON.stringify(scores));
 	quizscoreDiv.classList.toggle("collapse");
 	scoreHistoryDiv.classList.toggle("collapse");
+	activeDiv = scoreHistoryDiv;
 	listofscores();
 }
 
@@ -144,12 +147,14 @@ function startQuiz() {
 
 	introDiv.classList.toggle("collapse");
 	quizcontentDiv.classList.toggle("collapse");
+	activeDiv = quizcontentDiv;
 	loadQuestion(i);
 }
 
 function goBack() {
 	scoreHistoryDiv.classList.toggle("collapse");
 	introDiv.classList.toggle("collapse");
+	activeDiv = introDiv;
 	secondsLeft = 75;
 	timerNav.innerHTML = secondsLeft;
 	i = 0;
@@ -159,6 +164,15 @@ function clearHistory() {
 	scores = [];
 	localStorage.setItem("scores", JSON.stringify(scores));
 	listofscores();
+}
+
+function highScorelink() {
+	activeDiv.classList.toggle("collapse");
+	scoreHistoryDiv.classList.toggle("collapse");
+	i = 0;
+	secondsLeft = 75;
+	timerNav.innerHTML = secondsLeft;
+	clearInterval(timerInterval);
 }
 
 startQuizbtn.addEventListener("click", startQuiz);
@@ -181,3 +195,5 @@ submitScorebtn.addEventListener("click", scoreHistory);
 goBackbtn.addEventListener("click", goBack);
 
 clearHistorybtn.addEventListener("click", clearHistory);
+
+scorelinkNav.addEventListener("click", highScorelink);
