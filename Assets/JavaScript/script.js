@@ -62,6 +62,8 @@ var codeQuestions = [
 	],
 ];
 
+retain();
+
 function loadQuestion(index) {
 	questionDiv.innerHTML = codeQuestions[index][0];
 	answerA.value = codeQuestions[index][1];
@@ -174,8 +176,19 @@ function highScorelink() {
 	secondsLeft = 75;
 	timerNav.innerHTML = secondsLeft;
 	clearInterval(timerInterval);
+	listofscores();
 }
 
+function retain() {
+	// Get stored todos from localStorage
+	// Parsing the JSON string to an object
+	var storedScores = JSON.parse(localStorage.getItem("scores"));
+
+	// If todos were retrieved from localStorage, update the todos array to it
+	if (storedScores !== null) {
+		scores = storedScores;
+	}
+}
 startQuizbtn.addEventListener("click", startQuiz);
 
 answerA.addEventListener("click", function () {
