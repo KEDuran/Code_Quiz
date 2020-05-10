@@ -174,3 +174,5 @@ answerD.addEventListener("click", function () {
 submitScorebtn.addEventListener("click", scoreHistory);
 
 goBackbtn.addEventListener("click", goBack);
+
+clearHistorybtn.addEventListener("click", clearHistory);
