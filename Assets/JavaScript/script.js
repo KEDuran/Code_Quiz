@@ -205,34 +205,46 @@ function highScorelink() {
 	listofscores();
 }
 
-/* The retain() function is parsing out the user's quiz scores that are saved in local storage and assigning them back to the scores array, which ensures that the 
-saved quiz scores continue to populate on in the score history div even after the user refreshes the page. */
+/* The retain() function is parsing out the user's quiz scores that are saved in local storage and reassigning them back to the scores array, which ensures that the 
+saved quiz scores continue to populate in the score history div even after the user refreshes the page. */
 function retain() {
 	var storedScores = JSON.parse(localStorage.getItem("scores"));
-
 	if (storedScores !== null) {
 		scores = storedScores;
 	}
 }
+
+// This adds an event listener to map the startQuiz() function to the start quiz button once the button is clicked.
 startQuizbtn.addEventListener("click", startQuiz);
 
+// This adds an event listener to map the answerSelection() function to the button for answer choice A once the button is clicked.
 answerA.addEventListener("click", function () {
 	answerSelection(1);
 });
+
+// This adds an event listener to map the answerSelection() function to the button for answer choice B once the button is clicked.
 answerB.addEventListener("click", function () {
 	answerSelection(2);
 });
+
+// This adds an event listener to map the answerSelection() function to the button for answer choice C once the button is clicked.
 answerC.addEventListener("click", function () {
 	answerSelection(3);
 });
+
+// This adds an event listener to map the answerSelection() function to the button for answer choice D once the button is clicked.
 answerD.addEventListener("click", function () {
 	answerSelection(4);
 });
 
+// This adds an event listener to map the scoreHistory() function to the submit score button once the button is clicked.
 submitScorebtn.addEventListener("click", scoreHistory);
 
+// This adds an event listener to map the goBack() function to the go back button once the button is clicked.
 goBackbtn.addEventListener("click", goBack);
 
+// This adds an event listener to map the clearHistory() function to the clear history button once the button is clicked.
 clearHistorybtn.addEventListener("click", clearHistory);
 
+// This adds an event listener to map the highScorelink() function to the view highscores link once the button is clicked.
 scorelinkNav.addEventListener("click", highScorelink);
