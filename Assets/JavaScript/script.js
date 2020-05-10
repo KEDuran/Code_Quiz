@@ -166,7 +166,7 @@ function clearHistory() {
 	listofscores();
 }
 
-function HighscoreLink() {
+function highScorelink() {
 	activeDiv.classList.toggle("collapse");
 	scoreHistoryDiv.classList.toogle("collapse");
 	i = 0;
@@ -194,3 +194,5 @@ submitScorebtn.addEventListener("click", scoreHistory);
 goBackbtn.addEventListener("click", goBack);
 
 clearHistorybtn.addEventListener("click", clearHistory);
+
+scorelinkNav.addEventListener("click", highScorelink);
