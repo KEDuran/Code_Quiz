@@ -83,8 +83,9 @@ function loadQuestion(index) {
 	answerD.value = codeQuestions[index][4];
 }
 
+// The answerSeletion() function is used to define the behavior that will occur once the user selects an answer choice.
 function answerSelection(index) {
-	// answer choice
+	// This portion of the function is used to track the answer choice selected by the user.
 	var selected = "";
 	if (index === 1) {
 		selected = answerA;
@@ -95,7 +96,7 @@ function answerSelection(index) {
 	} else {
 		selected = answerD;
 	}
-	// alert needs to pop-up
+	// This portion of the function is used to populate an alert message based on whether the answer choice is "correct" or "wrong".
 	var alertMessage = "";
 	if (selected.value === codeQuestions[i][5]) {
 		alertMessage = alertCorrect;
@@ -103,16 +104,16 @@ function answerSelection(index) {
 	} else {
 		alertMessage = alertWrong;
 		alertWrong.classList.toggle("collapse");
-		// if answer choice is incorrect, decrement by 10sec
+		// If the answer choice is incorrect, secondsLeft variable will decrement by 10secs.
 		secondsLeft = secondsLeft - 10;
 		timerNav.innerHTML = secondsLeft;
 	}
-
+	// This portion of the function ensures the alert message pop-up will collapse after .5 secs after the user selects an answer choice.
 	var alertTimer = setInterval(function () {
 		alertMessage.classList.toggle("collapse");
 		clearInterval(alertTimer);
 	}, 500);
-
+	// This portion of the function will collapse the main quiz content div and populate the final score div after the user answers the last question.
 	if (i === 3) {
 		clearInterval(timerInterval);
 		quizcontentDiv.classList.toggle("collapse");
