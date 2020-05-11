@@ -1,4 +1,4 @@
-# Homework Assignemnt 4 - Code Quiz
+# Homework Assignment 4 - Code Quiz
 
 The purpose of this homework assignment was to develop a timed code quiz with multiple-choice questions. The code quiz app must run in a web browser and have a responsive layout that adpats to multiple screen sizes. Within the following sections below, I included:
 

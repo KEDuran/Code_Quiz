@@ -22,12 +22,15 @@
 	<body>
 		<!-- start nav here -->
 		<nav class="navbar navbar-dark bg-primary">
-			<a id="scorelink" class="navbar-brand" href="#">View Highscores</a>
-			<div class="col-md-2 form-inline text-light">
-				<div class="p-2 navbar-brand">Seconds Left:</div>
-				<div id="timer" class="navbar-brand">75</div>
+			<div>
+				<a id="scorelink" class="text-light" href="#">View Highscores</a>
+			</div>
+			<div class="form-inline">
+				<div class="text-light pr-2">Seconds Left:</div>
+				<div id="timer" class="text-light">75</div>
 			</div>
 		</nav>
+
 		<!-- end nav here -->
 
 		<!-- Start main container div -->
@@ -42,7 +45,7 @@
 				<!-- column 2-->
 				<div class="col-md-6">
 					<!-- intro div -->
-					<div id="intro" class="mt-4 mb-4">
+					<div id="intro" class="mt-4 mb-4 px-3 py-3">
 						<h3>Code Quiz Challenge</h3>
 						<p>
 							Test you Javascript knowledge by taking this timed code quiz! You
@@ -58,7 +61,7 @@
 						</button>
 					</div>
 					<!-- quiz content div(Q&A) -->
-					<div id="quizcontent" class="collapse">
+					<div id="quizcontent" class="collapse px-3 py-3">
 						<!-- row 1 for question -->
 						<div class="row">
 							<h4 id="question">
@@ -109,7 +112,7 @@
 						</div>
 					</div>
 					<!-- enter score div -->
-					<div id="quizscore" class="mt-4 mb-4 collapse">
+					<div id="quizscore" class="mt-4 mb-4 px-3 px-y collapse">
 						<h4>Thank you for completing the quiz!</h4>
 						<!-- score will be auto populated here -->
 						<form class="form-inline">
@@ -148,7 +151,7 @@
 						</button>
 					</div>
 					<!-- score history div-->
-					<div id="scorehistory" class="mt4 mb-4 collapse">
+					<div id="scorehistory" class="mt4 mb-4 px-3 py-3 collapse">
 						<h4>Highscores</h4>
 						<ol id="scorelist" class="list-group"></ol>
 						<button id="goBack" type="submit" class="btn btn-primary mb-2 mt-3">
