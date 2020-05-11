@@ -1,4 +1,4 @@
-# Homework Assignment 4 - Code Quiz
+# Homework Assignment 4 - Code Quiz App
 
 The purpose of this homework assignment was to develop a timed code quiz with multiple-choice questions. The code quiz app must run in a web browser and have a responsive layout that adpats to multiple screen sizes. Within the following sections below, I included:
 
@@ -6,7 +6,7 @@ The purpose of this homework assignment was to develop a timed code quiz with mu
 - Assignment scope (user story and acceptance criteria).
 - List of code questions (with correct answers) that were included in the code quiz app.
 
-## Links for Code App and GitHub Repo
+## Links for Code Quiz App and GitHub Repo
 
 Here are the links to (a) my code quiz app and (b) the associated GitHub repo that I used to develop the code quiz app.
 
@@ -41,7 +41,7 @@ WHEN the game is over
 THEN I can save my initials and score
 ```
 
-## Listing Code Quiz Questions
+## List of Code Quiz Questions
 
 Below is a list of the four code quiz questions that I selected from [w3schools.com](https://www.w3schools.com/quiztest/quiztest.asp?qtest=JS) to include in this code quiz app.
 
